@@ -1,0 +1,86 @@
+mode: train
+seed: 42
+dataset_name: MD17_Aspirin
+data_params:
+  root: ./dataset/MD17_Aspirin
+  label: aspirin
+  frac_list:
+  - 950
+  - 50
+  batch_size: 8
+  fragmentor_kwargs:
+    topoBO_threshold: 1.0
+    min_kernel_atoms_num: 2
+    min_bo_threshold: 0.1
+    expand_fbo_threshold: 0.1
+    max_kernel_atoms_num: 16
+    overlap_level: groups
+    empr_bo_method: Lendvay
+  he_type: explicit
+  implicit_rc: null
+  num_workers: 6
+model_params:
+  he_as_node_init: true
+  use_he_degree_embedding: true
+  use_he_as_message: false
+  use_he_scalar: false
+  update_he_feature: true
+  irreps_out: 1x0e
+  irreps_node_embedding: 128x0e+64x1o+32x2e
+  irreps_hyperedge_embedding: 128x0e+64x1o+32x2e
+  num_layers: 6
+  irreps_sh: 1x0e+1x1o+1x2e
+  max_radius: 9.0
+  number_of_basis: 32
+  rbf_basis_type: exp
+  fc_neurons:
+  - 64
+  - 64
+  irreps_node_feature: 512x0e
+  irreps_hyperedge_feature: null
+  irreps_head: 32x0e+16x1o+8x2e
+  num_heads: 4
+  irreps_pre_attn: null
+  rescale_degree: false
+  nonlinear_message: true
+  irreps_mlp_mid: 384x0e+192x1o+96x2e
+  use_attn_head: false
+  norm_layer: layer
+  alpha_drop: 0.0
+  proj_drop: 0.0
+  out_drop: 0.0
+  drop_path_rate: 0.0
+  mean_out: false
+  scale: null
+  atomref: null
+  output_force: true
+train_params:
+  ddp: false
+  accelerator: gpu
+  num_devices: 1
+  opt: adamw
+  opt_eps: 1.0e-08
+  opt_betas: null
+  clip_grad: null
+  momentum: 0.9
+  weight_decay: 1.0e-06
+  sched: cosine
+  lr: 0.0005
+  lr_noise: null
+  lr_noise_pct: 0.67
+  lr_noise_std: 1.0
+  warmup_lr: 1.0e-06
+  min_lr: 1.0e-06
+  decay_epochs: 30
+  warmup_epochs: 10
+  cooldown_epochs: 10
+  patience_epochs: 10
+  decay_rate: 0.1
+  epochs: 1500
+  max_time: 00:300:00:00
+  standardize: true
+  criterion: l2mae
+  save_path: ./train/MD17_aspirin/train_template
+  weights:
+  - 1
+  - 100

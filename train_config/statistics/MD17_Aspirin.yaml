@@ -1,0 +1,19 @@
+atom_types:
+- 1
+- 6
+- 8
+avg_hyperedge_degree: 14.96363639831543
+avg_node_degree: 2.6190476417541504
+avg_num_nodes: 21.0
+dataset_name: MD17_Aspirin
+fragment_kwargs:
+  empr_bo_method: Lendvay
+  expand_fbo_threshold: 0.1
+  max_kernel_atoms_num: 16
+  min_bo_threshold: 0.1
+  min_kernel_atoms_num: 2
+  overlap_level: groups
+  topoBO_threshold: 1.0
+hyperedge_channel: 16
+max_atom_z: 8
+max_dis: 9.0

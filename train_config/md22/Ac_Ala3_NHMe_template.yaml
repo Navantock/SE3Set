@@ -1,0 +1,86 @@
+mode: train
+seed: 42
+dataset_name: MD22_Ac_Ala3_NHMe
+data_params:
+  root: ./dataset/MD22_Ac_Ala3_NHMe
+  label: Ac_Ala3_NHMe
+  frac_list:
+  - 5500
+  - 500
+  batch_size: 8
+  fragmentor_kwargs:
+    empr_bo_method: SimpleExp
+    max_kernel_atoms_num: 8
+    min_bo_threshold: 0.1
+    min_kernel_atoms_num: 0
+    topoBO_threshold: 1.0
+  he_type: implicit
+  implicit_rc: 4.0
+  num_workers: 6
+
+model_params:
+  he_as_node_init: true
+  use_he_degree_embedding: true
+  use_he_as_message: false
+  use_he_scalar: false
+  update_he_feature: true
+  irreps_out: 1x0e
+  irreps_node_embedding: 128x0e+64x1o+32x2e
+  irreps_hyperedge_embedding: 128x0e+64x1o+32x2e
+  num_layers: 6
+  irreps_sh: 1x0e+1x1o+1x2e
+  max_radius: 8.793904304504395
+  number_of_basis: 32
+  rbf_basis_type: exp
+  fc_neurons:
+  - 64
+  - 64
+  irreps_node_feature: 512x0e
+  irreps_hyperedge_feature: null
+  irreps_head: 32x0e+16x1o+8x2e
+  num_heads: 4
+  irreps_pre_attn: null
+  rescale_degree: false
+  nonlinear_message: true
+  irreps_mlp_mid: 384x0e+192x1o+96x2e
+  use_attn_head: false
+  norm_layer: layer
+  alpha_drop: 0.0
+  proj_drop: 0.0
+  out_drop: 0.0
+  drop_path_rate: 0.0
+  mean_out: false
+  scale: null
+  atomref: null
+  output_force: true
+train_params:
+  accelerator: gpu
+  clip_grad: null
+  cooldown_epochs: 10
+  criterion: l2mae
+  ddp: false
+  decay_epochs: 30
+  decay_rate: 0.1
+  epochs: 1500
+  load_ckpt: null
+  lr: 0.0005
+  lr_noise: null
+  lr_noise_pct: 0.67
+  lr_noise_std: 1.0
+  max_time: 00:720:00:00
+  min_lr: 1.0e-06
+  momentum: 0.9
+  num_devices: 1
+  opt: adamw
+  opt_betas: null
+  opt_eps: 1.0e-08
+  patience_epochs: 10
+  save_path: ./train/MD22_Ac_Ala3_NHMe/train_template
+  sched: cosine
+  standardize: true
+  warmup_epochs: 10
+  warmup_lr: 1.0e-06
+  weight_decay: 1.0e-06
+  weights:
+  - 1
+  - 100
