@@ -85,7 +85,7 @@ Our model requires some pre-defined statistics for specified dataset like /train
 For QM9, MD17, MD22 datasets experiments in our paper, we have provided a python script to preprocess these datasets. You can run 
 
 ```bash
-python fragment_dataset.py -c [training-config-filepath]
+python fragment_dataset.py -c <training-config-filepath>
 ```
 
 to get the dataset saved at `data_params` `root`. Meanwhile, it will generate the statistics saved at <u>./train_config/statistics/<`dataset_name`>.yaml</u>.
