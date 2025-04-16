@@ -117,8 +117,10 @@ If you wish to cite our work, please do so as follows
 @article{wu2024se3set,
   title={SE3Set: Harnessing equivariant hypergraph neural networks for molecular representation learning},
   author={Wu, Hongfei and Wu, Lijun and Liu, Guoqing and Liu, Zhirong and Shao, Bin and Wang, Zun},
-  journal={arXiv preprint arXiv:2405.16511},
-  year={2024}
+  journal={Transactions on Machine Learning Research},
+  year={2025},
+  url={https://openreview.net/forum?id=muWEt1TOyo},
+  note={}
 }
 ```
 
