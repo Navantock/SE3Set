@@ -115,11 +115,15 @@ python train.py train.py --conf <training-config-filepath> --conf_dataset <stati
 If you wish to cite our work, please do so as follows
 
 ```tex
-@article{wu2024se3set,
-  title={SE3Set: Harnessing equivariant hypergraph neural networks for molecular representation learning},
-  author={Wu, Hongfei and Wu, Lijun and Liu, Guoqing and Liu, Zhirong and Shao, Bin and Wang, Zun},
-  journal={arXiv preprint arXiv:2405.16511},
-  year={2024}
+@article{
+  wu2025seset,
+  title={{SE}3Set: Harnessing Equivariant Hypergraph Neural Networks for Molecular Representation Learning},
+  author={Hongfei Wu and Lijun Wu and Guoqing Liu and Zhirong Liu and Bin Shao and Zun Wang},
+  journal={Transactions on Machine Learning Research},
+  issn={2835-8856},
+  year={2025},
+  url={https://openreview.net/forum?id=muWEt1TOyo},
+  note={}
 }
 ```
 
